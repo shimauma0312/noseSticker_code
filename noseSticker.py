@@ -1,17 +1,12 @@
-# coding: utf-8
-
 import time
 import RPi.GPIO as GPIO
 import spidev
 import pygame.mixer
 
-#300 ~ 1000
 threshold = 900 
 
 pygame.mixer.init()
-#/home/pi/data/hoge.mp3
-#/home/pi/などが好ましいんじゃ
-#fileパス
+
 pygame.mixer.music.load("mp3") 
 
 GPIO.setmode(GPIO.BCM)
@@ -56,9 +51,6 @@ try:
         GPIO.output(17,False)
 
         print Val
-
-        #if Val > threshold:
-           # pygame.mixer.music.play(0)
 
 except KeyboardInterrupt:
     pass
